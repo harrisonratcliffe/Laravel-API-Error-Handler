@@ -16,4 +16,10 @@ class AccessDeniedException extends ExceptionAbstract
     {
         $this->message = "You do no have permission to perform this action.";
     }
+
+    public function handleErrors():void
+    {
+        $this->errors = '';
+    }
+
 }

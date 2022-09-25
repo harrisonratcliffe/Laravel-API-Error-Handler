@@ -16,4 +16,10 @@ class DefaultException extends ExceptionAbstract
     {
         $this->message = $this->exception->getMessage();
     }
+
+    public function handleErrors():void
+    {
+        $this->errors = '';
+    }
+
 }

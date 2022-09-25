@@ -32,4 +32,5 @@ abstract class ExceptionAbstract
     abstract public function handleStatusCode():void;
 
     abstract public function handleMessage():void;
+
 }
