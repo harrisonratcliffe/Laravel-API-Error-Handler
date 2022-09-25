@@ -1,7 +1,7 @@
 # Laravel API Error Handler
 a useful package for handle your exception when you are developing a API
 
-This package is a fork of https://github.com/harrisonratcliffe/laravel-api-error-handler to work with Laravel 9 and below.
+This package is a fork of [hamidreza2005/laravel-api-error-handler](https://github.com/hamidreza2005/laravel-api-error-handler) to work with Laravel 9 and below.
 ## :inbox_tray: Installation
 you can install this package via Composer:
 ```bash
