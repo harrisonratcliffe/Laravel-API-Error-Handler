@@ -1,9 +1,11 @@
-# Laravel Api Error Handler
+# Laravel API Error Handler
 a useful package for handle your exception when you are developing a API
+
+This package is a fork of https://github.com/harrisonratcliffe/laravel-api-error-handler to work with Laravel 9 and below.
 ## :inbox_tray: Installation
 you can install this package via Composer:
 ```bash
-composer require hamidreza2005/laravel-api-error-handler
+composer require harrisonratcliffe/laravel-api-error-handler
 ```
 and after installation you can run following command to publish config files
 ```bash
@@ -15,13 +17,13 @@ for configure this package go to `config/api-error-handler.php`
 <?php  
   
 return [  
-  "Symfony\Component\HttpKernel\Exception\NotFoundHttpException" => "\hamidreza2005\LaravelApiErrorHandler\Exceptions\NotFoundException",  
-  "ErrorException" => "\hamidreza2005\LaravelApiErrorHandler\Exceptions\ServerInternalException",  
-  "Illuminate\Database\QueryException" => "\hamidreza2005\LaravelApiErrorHandler\Exceptions\ServerInternalException",  
-  "Illuminate\Auth\AuthenticationException" => "\hamidreza2005\LaravelApiErrorHandler\Exceptions\AccessDeniedException",  
-  "Symfony\Component\HttpKernel\Exception\HttpException" => "\hamidreza2005\LaravelApiErrorHandler\Exceptions\AccessDeniedException",  
-  "Illuminate\Validation\ValidationException" => "\hamidreza2005\LaravelApiErrorHandler\Exceptions\ValidationException", 
-  "Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException"=>"\hamidreza2005\LaravelApiErrorHandler\Exceptions\NotFoundException", 
+  "Symfony\Component\HttpKernel\Exception\NotFoundHttpException" => "\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\NotFoundException",  
+  "ErrorException" => "\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ServerInternalException",  
+  "Illuminate\Database\QueryException" => "\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ServerInternalException",  
+  "Illuminate\Auth\AuthenticationException" => "\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\AccessDeniedException",  
+  "Symfony\Component\HttpKernel\Exception\HttpException" => "\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\AccessDeniedException",  
+  "Illuminate\Validation\ValidationException" => "\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ValidationException", 
+  "Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException"=>"\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\NotFoundException", 
 ];
 ```
 this package provide some common exception like `ModelNotFound` But if you want to customize it you can do like this :
@@ -47,7 +49,7 @@ go to the `app\Exceptions\Handler.php` and put this code:
   
 namespace App\Exceptions;  
   
-use hamidreza2005\LaravelApiErrorHandler\Traits\ApiErrorHandler;  
+use harrisonratcliffe\LaravelApiErrorHandler\Traits\ApiErrorHandler;  
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;  
 use Throwable;  
   
@@ -83,7 +85,7 @@ class Handler extends ExceptionHandler
  }
 ```
 ## Make Your Own Error Handler!
-if you want to make your own handler instead of using default handler you can make a class in everywhere you want **but your class have to Extends `hamidreza2005\LaravelApiErrorHandler\Exceptions\ExceptionAbstract`**
+if you want to make your own handler instead of using default handler you can make a class in everywhere you want **but your class have to Extends `harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ExceptionAbstract`**
 
 for Example:
 ```php
