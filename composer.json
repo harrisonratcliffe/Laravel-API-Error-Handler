@@ -1,0 +1,37 @@
+{
+    "name": "harrisonratcliffe/laravel-api-error-handler",
+    "description": "A useful package to handle your Laravel API exceptions.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "api-error-handler",
+        "error-handling",
+        "laravel-api-error-handler"
+    ],
+    "authors": [
+        {
+            "name": "Harrison Ratcliffe",
+            "email": "email@harrisonr.uk",
+            "role": "developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~6|~7|~8|~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "harrisonratcliffe\\LaravelApiErrorHandler\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "harrisonratcliffe\\LaravelApiErrorHandler\\LaravelApiErrorHandlerServiceProvider"
+            ]
+        }
+    }
+}
