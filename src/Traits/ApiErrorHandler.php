@@ -2,7 +2,7 @@
 
 namespace harrisonratcliffe\LaravelApiErrorHandler\Traits;
 
-use harrisonratcliffe\LaravelApiErrorHandler\Traits\HttpResponses;
+use App\Traits\HttpResponses;
 use harrisonratcliffe\LaravelApiErrorHandler\Exceptions\DefaultException;
 use harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ServerInternalException;
 use Illuminate\Support\Facades\Response;
