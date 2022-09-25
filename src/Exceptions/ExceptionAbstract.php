@@ -20,6 +20,9 @@ abstract class ExceptionAbstract
     public function getMessage(){
         return $this->message;
     }
+    public function getErrors(){
+        return $this->errors;
+    }
 
     public function getStatusCode()
     {

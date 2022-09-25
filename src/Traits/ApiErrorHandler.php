@@ -2,12 +2,15 @@
 
 namespace harrisonratcliffe\LaravelApiErrorHandler\Traits;
 
+use App\Traits\HttpResponses;
 use harrisonratcliffe\LaravelApiErrorHandler\Exceptions\DefaultException;
 use harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ServerInternalException;
 use Illuminate\Support\Facades\Response;
 
 trait ApiErrorHandler
 {
+    use HttpResponses;
+
     public function handleError($exception)
     {
         $exceptions = config("api-error-handler") ?? [];
@@ -15,6 +18,7 @@ trait ApiErrorHandler
         $handler = new $class($exception);
         $handler->handleStatusCode();
         $handler->handleMessage();
-        return Response::json(["error"=>$handler->getMessage()],$handler->getStatusCode(),["Content-Type"=>"application/json"]);
+        $handler->handleErrors();
+        return $this->error($handler->getErrors(), $handler->getMessage(), $handler->getStatusCode());
     }
 }

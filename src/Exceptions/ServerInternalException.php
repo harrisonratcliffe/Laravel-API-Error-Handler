@@ -14,6 +14,6 @@ class ServerInternalException extends ExceptionAbstract
 
     public function handleMessage():void
     {
-        $this->message = "Server Internal Error";
+        $this->message = "The server encountered an error and could not complete your request.";
     }
 }

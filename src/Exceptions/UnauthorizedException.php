@@ -14,6 +14,6 @@ class UnauthorizedException extends ExceptionAbstract
 
     public function handleMessage(): void
     {
-        $this->message = "Unauthorized";
+        $this->message = "You are not authorized.";
     }
 }

@@ -14,6 +14,6 @@ class NotFoundException extends ExceptionAbstract
 
     public function handleMessage():void
     {
-        $this->message = "Not Found !";
+        $this->message = "The requested data could not be found.";
     }
 }

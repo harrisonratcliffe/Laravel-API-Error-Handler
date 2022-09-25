@@ -14,6 +14,11 @@ class ValidationException extends ExceptionAbstract
 
     public function handleMessage():void
     {
-        $this->message = $this->exception->errors();
+        $this->message = 'The data you submitted was rejected by the server.';
+    }
+
+    public function handleErrors():void
+    {
+        $this->errors = $this->exception->errors();
     }
 }
