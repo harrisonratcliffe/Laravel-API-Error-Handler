@@ -1,9 +1,9 @@
 <?php
 
-namespace hamidreza2005\LaravelApiErrorHandler\Traits;
+namespace harrisonratcliffe\LaravelApiErrorHandler\Traits;
 
-use hamidreza2005\LaravelApiErrorHandler\Exceptions\DefaultException;
-use hamidreza2005\LaravelApiErrorHandler\Exceptions\ServerInternalException;
+use harrisonratcliffe\LaravelApiErrorHandler\Exceptions\DefaultException;
+use harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ServerInternalException;
 use Illuminate\Support\Facades\Response;
 
 trait ApiErrorHandler

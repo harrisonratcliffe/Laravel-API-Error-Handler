@@ -1,5 +1,5 @@
 <?php
-namespace hamidreza2005\LaravelApiErrorHandler;
+namespace harrisonratcliffe\LaravelApiErrorHandler;
 
 use Illuminate\Support\ServiceProvider;
 

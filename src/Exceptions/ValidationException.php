@@ -1,7 +1,7 @@
 <?php
 
 
-namespace hamidreza2005\LaravelApiErrorHandler\Exceptions;
+namespace harrisonratcliffe\LaravelApiErrorHandler\Exceptions;
 
 
 class ValidationException extends ExceptionAbstract

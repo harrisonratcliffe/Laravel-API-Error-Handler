@@ -1,7 +1,7 @@
 <?php
 
 
-namespace hamidreza2005\laravelApiErrorHandler\Exceptions;
+namespace harrisonratcliffe\laravelApiErrorHandler\Exceptions;
 
 
 class UnauthorizedException extends ExceptionAbstract
