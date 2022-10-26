@@ -4,7 +4,7 @@
 namespace harrisonratcliffe\LaravelApiErrorHandler\Exceptions;
 
 
-class AccessDeniedException extends ExceptionAbstract
+class AuthenticationException extends ExceptionAbstract
 {
 
     public function handleStatusCode():void
