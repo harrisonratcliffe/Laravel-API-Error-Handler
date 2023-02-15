@@ -1,18 +1,18 @@
 # Laravel API Error Handler
-a useful package for handle your exception when you are developing a API
+Laravel API Error Handler is a package designed to handle exceptions when developing APIs in Laravel.
 
 This package is a fork of [hamidreza2005/laravel-api-error-handler](https://github.com/hamidreza2005/laravel-api-error-handler) to work with Laravel 9 and below.
 ## :inbox_tray: Installation
-you can install this package via Composer:
+You can install this package via Composer:
 ```bash
 composer require harrisonratcliffe/laravel-api-error-handler
 ```
-and after installation you can run following command to publish config files
+After installation, run the following command to publish the configuration files:
 ```bash
 php artisan vendor:publish --tag laravel-api-error-handler
 ```
 ## :gear: Configuration
-for configure this package go to `config/api-error-handler.php`
+To configure this package, go to `config/api-error-handler.php`.
 ```php
 <?php  
   
@@ -26,7 +26,7 @@ return [
   "Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException"=>"\harrisonratcliffe\LaravelApiErrorHandler\Exceptions\NotFoundException", 
 ];
 ```
-this package provide some common exception like `ModelNotFound` But if you want to customize it you can do like this :
+This package provides some common exceptions like ModelNotFound. If you want to customize it, you can do it like this:
 ```php
 <?php  
   
@@ -42,8 +42,10 @@ return [
 |ValidationException|422|it returns all errors in validation|
 |DefaultException|the status code of the Error|the message of the Error|
 
-## :rocket: let this package get your Errors
-go to the `app\Exceptions\Handler.php` and put this code:
+## :rocket: Let This Package Handle Your Errors
+Go to `app\Exceptions\Handler.php` and add the following code:
+
+
 ```php
 <?php  
   
@@ -56,6 +58,7 @@ use Throwable;
 class Handler extends ExceptionHandler  
 {  
 	  use ApiErrorHandler;  
+	  
 	  /**  
 	 * A list of the exception types that are not reported. * * @var 		array  
 	 */  
@@ -84,10 +87,10 @@ class Handler extends ExceptionHandler
 	 }
  }
 ```
-## Make Your Own Error Handler!
-if you want to make your own handler instead of using default handler you can make a class in everywhere you want **but your class have to Extends `harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ExceptionAbstract`**
+:writing_hand: Create Your Own Error Handler
+If you want to create your own handler instead of using the default handler, you can create a class that extends `harrisonratcliffe\LaravelApiErrorHandler\Exceptions\ExceptionAbstract` in any location.
 
-for Example:
+For example:
 ```php
 <?php  
   
@@ -108,7 +111,7 @@ class MyException extends ExceptionAbstract
 	  }
  }
 ```
-and you can do like this in `config/api-error-handler.php`:
+And you can then declare your handler in `config/api-error-handler.php`:
 ```php
 <?php
 
@@ -117,7 +120,7 @@ return [
 ];
 ```
 ### ❗ Notice
-**if an unknown Exception appeared this package automaticlly show it in the response but if you don't want that you can set `APP_DEBUG` to `false` in `.env` . when `APP_DEBUG` is `false` Server Internal shown in response** 
+If an unknown exception appears, this package automatically shows it in the response. However, you can prevent this by setting `APP_DEBUG` to `false` in your `.env` file. When `APP_DEBUG` is `false`, "Server Internal Error" is shown in the response.
 ## :scroll: License  
   
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.  
